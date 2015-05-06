@@ -12,17 +12,23 @@
 
 /// The `+=` operator (without the sugar)
 pub trait AddAssign<Rhs=Self> {
-    /// `a += b` -> `AddAssign::add_assign(&mut a, &b)`
-    fn add_assign(&mut self, &Rhs);
+    /// `a += b` -> `AddAssign::add_assign(&mut a, b)`
+    fn add_assign(&mut self, Rhs);
+}
+
+/// The `/=` operator (without the sugar)
+pub trait DivAssign<Rhs=Self> {
+    /// `a /= b` -> `DivAssign::div_assign(&mut a, b)`
+    fn div_assign(&mut self, Rhs);
 }
 
 /// The `*=` operator (without the sugar)
 pub trait MulAssign<Rhs=Self> {
-    /// `a *= b` -> `Mulssign::mul_assign(&mut a, &b)`
-    fn mul_assign(&mut self, &Rhs);
+    /// `a *= b` -> `Mulssign::mul_assign(&mut a, b)`
+    fn mul_assign(&mut self, Rhs);
 }
 /// The `-=` operator (without the sugar)
 pub trait SubAssign<Rhs=Self> {
-    /// `a -= b` -> `SubAssign::sub_assign(&mut a, &b)`
-    fn sub_assign(&mut self, &Rhs);
+    /// `a -= b` -> `SubAssign::sub_assign(&mut a, b)`
+    fn sub_assign(&mut self, Rhs);
 }
